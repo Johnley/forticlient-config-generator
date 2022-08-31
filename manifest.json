@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "FortiClient Generator",
+  "name": "FortiClient VPN Configuration Generator",
   "icons": [
     {
       "src": "favicon.ico",
