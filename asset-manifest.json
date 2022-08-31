@@ -1,16 +1,13 @@
 {
   "files": {
-    "main.css": "/forticlient-config-generator/static/css/main.073c9b0a.css",
-    "main.js": "/forticlient-config-generator/static/js/main.08270bbc.js",
-    "static/js/787.eb14e765.chunk.js": "/forticlient-config-generator/static/js/787.eb14e765.chunk.js",
-    "static/media/logo.svg": "/forticlient-config-generator/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "main.css": "/forticlient-config-generator/static/css/main.5bb4ad0c.css",
+    "main.js": "/forticlient-config-generator/static/js/main.5abb50ec.js",
     "index.html": "/forticlient-config-generator/index.html",
-    "main.073c9b0a.css.map": "/forticlient-config-generator/static/css/main.073c9b0a.css.map",
-    "main.08270bbc.js.map": "/forticlient-config-generator/static/js/main.08270bbc.js.map",
-    "787.eb14e765.chunk.js.map": "/forticlient-config-generator/static/js/787.eb14e765.chunk.js.map"
+    "main.5bb4ad0c.css.map": "/forticlient-config-generator/static/css/main.5bb4ad0c.css.map",
+    "main.5abb50ec.js.map": "/forticlient-config-generator/static/js/main.5abb50ec.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.08270bbc.js"
+    "static/css/main.5bb4ad0c.css",
+    "static/js/main.5abb50ec.js"
   ]
 }
