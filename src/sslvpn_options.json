@@ -25,7 +25,7 @@
     "type": "switch",
     "name": "Enable DTLS",
     "description": "DTLS supported only by FortiClient (Windows). When this setting is disabled, FortiClient uses TLS, even if dtls-tunnel is enabled on the FortiGate. When this setting is enabled, FortiClient uses DTLS, if it is enabled on the FortiGate, and tunnel establishment is successful. If dtls-tunnel is disabled on the FortiGate, or tunnel establishment is not successful, FortiClient uses TLS. DTLS tunnel uses UDP instead of TCP and can increase throughput over VPN.",
-    "value": 0
+    "value": 1
   },
   {
     "id": "block_ipv6",
