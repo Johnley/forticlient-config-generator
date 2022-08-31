@@ -1,7 +1,7 @@
 {
   "name": "forticlient-config-generator",
   "version": "0.1.0",
-  "homepage": "https://forticlient-config.github.io",
+  "homepage": "https://johnley.io/forticlient-config-generator/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
