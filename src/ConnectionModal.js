@@ -123,7 +123,7 @@ function ConnectionsModal(props) {
         <Button variant="secondary" onClick={props.handleClose}>
           Close
         </Button>
-        <Button variant="primary" onClick={sendConnection}>
+        <Button variant="success" onClick={sendConnection}>
           Save Changes
         </Button>
       </Modal.Footer>

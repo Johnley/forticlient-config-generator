@@ -15,6 +15,35 @@ function App() {
 
   const [show, setShow] = useState(false);
 
+  const configdata =
+    `<?xml version="1.0" encoding="UTF-8" ?>\n` +
+    `<forticlient_configuration>\n` +
+    `\t<vpn>\n` +
+    `\t\t<sslvpn>\n` +
+    `\t\t\t<options>\n` +
+    sslOptions
+      .map((item) => `\t\t\t\t<${item.id}>${item.value}</${item.id}>`)
+      .join("\n") +
+    `\n\t\t\t</options>\n` +
+    `\t\t\t<connections>\n` +
+    connections.map(
+      (connection) =>
+        `\t\t\t\t<connection>\n` +
+        `\t\t\t\t\t<name>${connection.name}</name>\n` +
+        `\t\t\t\t\t<description>${connection.description}</description>\n` +
+        `\t\t\t\t\t<server>${connection.server}</server>\n` +
+        `\t\t\t\t\t<dual_stack>${connection.dual_stack}</dual_stack>\n` +
+        `\t\t\t\t\t<sso_enabled>${connection.sso_enabled}</sso_enabled>\n` +
+        `\t\t\t\t\t<use_external_browser>${connection.use_external_browser}</use_external_browser>\n` +
+        `\t\t\t\t\t<machine>${connection.machine}</machine>\n` +
+        `\t\t\t\t\t<warn_invalid_server_certificate>${connection.warn_invalid_server_certificate}</warn_invalid_server_certificate>\n` +
+        `\t\t\t\t</connection>\n`
+    ) +
+    `\t\t\t</connections>\n` +
+    `\t\t</sslvpn>\n` +
+    `\t</vpn>\n` +
+    `</forticlient_configuration>`;
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -34,11 +63,26 @@ function App() {
     handleClose();
   };
 
+  const downloadConfig = () => {
+    const blob = new Blob([configdata], { type: "text/xml" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.download = "client_settings.conf";
+    link.href = url;
+    link.click();
+  };
+
   return (
     <div>
       <Navbar bg="dark" variant="dark">
         <Container>
           <Navbar.Brand>FortiClient VPN Configuration Generator</Navbar.Brand>
+          <Navbar.Toggle />
+        <Navbar.Collapse className="justify-content-end">
+          <Navbar.Text>
+            FortiClient VPN Version: 7.0.5
+          </Navbar.Text>
+        </Navbar.Collapse>
         </Container>
       </Navbar>
       <br />
@@ -75,41 +119,19 @@ function App() {
             </Button>
           </Col>
           <Col>
-            <Form.Control
-              as="textarea"
-              value={
-                `<?xml version="1.0" encoding="UTF-8" ?>\n` +
-                `<forticlient_configuration>\n` +
-                `\t<vpn>\n` +
-                `\t\t<sslvpn>\n` +
-                `\t\t\t<options>\n` +
-                sslOptions
-                  .map(
-                    (item) => `\t\t\t\t<${item.id}>${item.value}</${item.id}>`
-                  )
-                  .join("\n") +
-                `\n\t\t\t</options>\n` +
-                `\t\t\t<connections>\n` +
-                connections.map(connection => (
-                  `\t\t\t\t<connection>\n` +
-                  `\t\t\t\t\t<name>${connection.name}</name>\n` +
-                  `\t\t\t\t\t<description>${connection.description}</description>\n` +
-                  `\t\t\t\t\t<server>${connection.server}</server>\n` +
-                  `\t\t\t\t\t<dual_stack>${connection.dual_stack}</dual_stack>\n` +
-                  `\t\t\t\t\t<sso_enabled>${connection.sso_enabled}</sso_enabled>\n` +
-                  `\t\t\t\t\t<use_external_browser>${connection.use_external_browser}</use_external_browser>\n` +
-                  `\t\t\t\t\t<machine>${connection.machine}</machine>\n` +
-                  `\t\t\t\t\t<warn_invalid_server_certificate>${connection.warn_invalid_server_certificate}</warn_invalid_server_certificate>\n` +
-                  `\t\t\t\t</connection>\n`
-                )) +
-                `\t\t\t</connections>\n` +
-                `\t\t</sslvpn>\n` +
-                `\t</vpn>\n` +
-                `</forticlient_configuration>`
-              }
-              style={{ height: "50vh" }}
-              disabled
-            />
+            <Row>
+              <Form.Control
+                as="textarea"
+                value={configdata}
+                style={{ height: "50vh" }}
+                disabled
+              />
+            </Row>
+            <Row>
+              <Button variant="info" onClick={downloadConfig}>
+                Download
+              </Button>
+            </Row>
           </Col>
         </Row>
       </Container>
