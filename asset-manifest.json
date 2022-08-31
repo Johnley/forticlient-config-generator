@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/forticlient-config-generator/static/css/main.5bb4ad0c.css",
-    "main.js": "/forticlient-config-generator/static/js/main.5abb50ec.js",
+    "main.js": "/forticlient-config-generator/static/js/main.3d4bc371.js",
     "index.html": "/forticlient-config-generator/index.html",
     "main.5bb4ad0c.css.map": "/forticlient-config-generator/static/css/main.5bb4ad0c.css.map",
-    "main.5abb50ec.js.map": "/forticlient-config-generator/static/js/main.5abb50ec.js.map"
+    "main.3d4bc371.js.map": "/forticlient-config-generator/static/js/main.3d4bc371.js.map"
   },
   "entrypoints": [
     "static/css/main.5bb4ad0c.css",
-    "static/js/main.5abb50ec.js"
+    "static/js/main.3d4bc371.js"
   ]
 }
