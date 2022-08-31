@@ -1,0 +1,72 @@
+[
+  {
+    "id": "dnscache_service_control",
+    "type": "switch",
+    "name": "DNS Cache Control",
+    "description": "FortiClient disables Windows OS DNS cache when it establishes an SSLVPN tunnel. The DNS cache is restored after SSL VPN tunnel is disconnected.",
+    "value": 0
+  },
+  {
+    "id": "prefer_sslvpn_dns",
+    "type": "switch",
+    "name": "Prefer SSLVPN DNS",
+    "description": "When this setting is disabled, the custom DNS server from SSL VPN is not added to the physical interface. When this setting is enabled, the custom DNS server from SSL VPN is prepended to the physical interface.",
+    "value": 1
+  },
+  {
+    "id": "use_legacy_ssl_adapter",
+    "type": "switch",
+    "name": "Use Legacy SSL Driver",
+    "description": "When this setting is disabled, FortiClient uses the new SSL driver. When this setting is enabled, FortiClient uses the legacy SSL driver.",
+    "value": 0
+  },
+  {
+    "id": "preferred_dtls_tunnel",
+    "type": "switch",
+    "name": "Enable DTLS",
+    "description": "DTLS supported only by FortiClient (Windows). When this setting is disabled, FortiClient uses TLS, even if dtls-tunnel is enabled on the FortiGate. When this setting is enabled, FortiClient uses DTLS, if it is enabled on the FortiGate, and tunnel establishment is successful. If dtls-tunnel is disabled on the FortiGate, or tunnel establishment is not successful, FortiClient uses TLS. DTLS tunnel uses UDP instead of TCP and can increase throughput over VPN.",
+    "value": 0
+  },
+  {
+    "id": "block_ipv6",
+    "type": "switch",
+    "name": "Block IPv6",
+    "description": "When this setting is disabled, FortiClient allows IPv6 connection. When this setting is enabled, FortiClient blocks IPv6 connection. FortiClient uses only IPv4 connectivity when the SSL VPN tunnel is up.",
+    "value": 0
+  },
+  {
+    "id": "no_dhcp_server_route",
+    "type": "switch",
+    "name": "Create DHCP Public Server Route",
+    "description": "When this setting is disabled, FortiClient creates the DHCP public server route upon tunnel establishment. When this setting is enabled, FortiClient does not create the DHCP public server route upon tunnel establishment.",
+    "value": 0
+  },
+  {
+    "id": "disallow_invalid_server_certificate",
+    "type": "switch",
+    "name": "Block Invalid Server Certificate",
+    "description": "When this setting is disabled and an invalid server certificate is used, FortiClient displays a popup that allows the user to continue with the invalid certificate. When this setting is enabled and an invalid server certificate is used, FortiClient does not display a popup and stops the connection.",
+    "value": 0
+  },
+  {
+    "id": "keep_connection_alive",
+    "type": "switch",
+    "name": "Retry VPN Session",
+    "description": "Retry restoring an active VPN session connection.",
+    "value": 0
+  },
+  {
+    "id": "show_auth_cert_only",
+    "type": "switch",
+    "name": "Suppress SmartCard Certificate Dialogs",
+    "description": "Supress dialog boxes from displaying in FortiClient when using SmartCard certificates.",
+    "value": 0
+  },
+  {
+    "id": "warn_invalid_server_certificate",
+    "type": "switch",
+    "name": "Warn on Invalid Certificate",
+    "description": "Display a warning message if the server certificate is invalid.",
+    "value": 1
+  }
+]
