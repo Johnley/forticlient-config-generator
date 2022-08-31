@@ -102,7 +102,7 @@ function App() {
                   `\t\t\t\t\t<warn_invalid_server_certificate>${connection.warn_invalid_server_certificate}</warn_invalid_server_certificate>\n` +
                   `\t\t\t\t</connection>\n`
                 )) +
-                `\t\t\t<\connections>\n` +
+                `\t\t\t</connections>\n` +
                 `\t\t</sslvpn>\n` +
                 `\t</vpn>\n` +
                 `</forticlient_configuration>`
